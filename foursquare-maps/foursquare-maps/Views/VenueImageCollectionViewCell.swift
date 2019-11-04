@@ -10,4 +10,6 @@ import UIKit
 
 class VenueImageCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
 }

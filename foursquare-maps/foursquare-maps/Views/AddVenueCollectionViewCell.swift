@@ -10,4 +10,9 @@ import UIKit
 
 class AddVenueCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var venueNameLabel: UILabel!
+    
+    
+    
 }

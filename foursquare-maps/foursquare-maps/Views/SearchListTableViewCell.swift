@@ -10,6 +10,11 @@ import UIKit
 
 class SearchListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var venueImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
