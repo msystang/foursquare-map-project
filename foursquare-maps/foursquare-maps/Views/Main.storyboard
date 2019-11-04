@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ag7-su-tPS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="qmm-Ml-QXp">
             <objects>
                 <viewController id="uuz-D8-Yym" sceneMemberID="viewController">
@@ -17,10 +17,49 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tm9-wd-pAw"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass" catalog="system" id="CwZ-wp-Lb7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efX-bz-585" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="66"/>
+            <point key="canvasLocation" x="1009" y="-257"/>
+        </scene>
+        <!--Collections-->
+        <scene sceneID="sgm-Bi-5Wh">
+            <objects>
+                <viewController id="JRi-5g-J0O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1gU-4k-SwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vWS-za-V8u"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Collections" image="folder" catalog="system" id="JBy-lB-Y5l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SW-AM-5F6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="471"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6di-xR-8OR">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ag7-su-tPS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E9s-a1-Ue6">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uuz-D8-Yym" kind="relationship" relationship="viewControllers" id="AFw-5l-YVJ"/>
+                        <segue destination="JRi-5g-J0O" kind="relationship" relationship="viewControllers" id="VLZ-g0-75i"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfg-Mn-A7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="64" height="48"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
