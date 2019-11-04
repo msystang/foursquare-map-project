@@ -17,6 +17,10 @@
 		EAF3DA582370B76700EE5F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA572370B76700EE5F74 /* Main.storyboard */; };
 		EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */; };
 		EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA602370B82400EE5F74 /* AppError.swift */; };
+		EAF3DA632370BC2600EE5F74 /* venue.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA622370BC2600EE5F74 /* venue.json */; };
+		EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA642370BCB900EE5F74 /* Venue.swift */; };
+		EAF3DA662370C20A00EE5F74 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA642370BCB900EE5F74 /* Venue.swift */; };
+		EAF3DA672370C21100EE5F74 /* venue.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA622370BC2600EE5F74 /* venue.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 		EAF3DA572370B76700EE5F74 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EAF3DA602370B82400EE5F74 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		EAF3DA622370BC2600EE5F74 /* venue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venue.json; sourceTree = "<group>"; };
+		EAF3DA642370BCB900EE5F74 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		EAF3DA492370B03800EE5F74 /* foursquare-mapsTests */ = {
 			isa = PBXGroup;
 			children = (
+				EAF3DA622370BC2600EE5F74 /* venue.json */,
 				EAF3DA4A2370B03800EE5F74 /* foursquare_mapsTests.swift */,
 				EAF3DA4C2370B03800EE5F74 /* Info.plist */,
 			);
@@ -135,6 +142,7 @@
 		EAF3DA5C2370B7E800EE5F74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EAF3DA642370BCB900EE5F74 /* Venue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF3DA582370B76700EE5F74 /* Main.storyboard in Resources */,
+				EAF3DA672370C21100EE5F74 /* venue.json in Resources */,
 				EAF3DA402370B03800EE5F74 /* LaunchScreen.storyboard in Resources */,
 				EAF3DA3D2370B03800EE5F74 /* Assets.xcassets in Resources */,
 			);
@@ -239,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF3DA632370BC2600EE5F74 /* venue.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +262,7 @@
 				EAF3DA382370B03600EE5F74 /* ViewController.swift in Sources */,
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
+				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
 				EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */,
 				EAF3DA342370B03600EE5F74 /* AppDelegate.swift in Sources */,
 				EAF3DA362370B03600EE5F74 /* SceneDelegate.swift in Sources */,
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF3DA4B2370B03800EE5F74 /* foursquare_mapsTests.swift in Sources */,
+				EAF3DA662370C20A00EE5F74 /* Venue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

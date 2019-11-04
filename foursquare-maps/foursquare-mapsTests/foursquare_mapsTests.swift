@@ -19,16 +19,33 @@ class foursquare_mapsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testVenueModelDecode() {
+        guard let jsonPath = Bundle.main.path(forResource: "venue", ofType: "json") else {
+            XCTFail("Could not find venue.json file")
+            return
         }
+        
+        let jsonURL = URL(fileURLWithPath: jsonPath)
+        var venueJSONData = Data()
+        
+        do {
+            venueJSONData = try Data(contentsOf: jsonURL)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Act
+        var venues = [Venue]()
+        
+        do {
+            let venuesInfo = try Venues.decodeVenuesFromData(from: venueJSONData)
+            venues = venuesInfo
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Assert
+        XCTAssertTrue(venues.count == 30, "Was expecting 30 best sellers, but found \(venues.count)")
     }
-
+    
 }
