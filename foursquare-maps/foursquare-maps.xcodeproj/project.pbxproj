@@ -13,6 +13,7 @@
 		EAF3DA3D2370B03800EE5F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA3C2370B03800EE5F74 /* Assets.xcassets */; };
 		EAF3DA402370B03800EE5F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA3E2370B03800EE5F74 /* LaunchScreen.storyboard */; };
 		EAF3DA4B2370B03800EE5F74 /* foursquare_mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA4A2370B03800EE5F74 /* foursquare_mapsTests.swift */; };
+		EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA552370B3D000EE5F74 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EAF3DA462370B03800EE5F74 /* foursquare-mapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foursquare-mapsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF3DA4A2370B03800EE5F74 /* foursquare_mapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foursquare_mapsTests.swift; sourceTree = "<group>"; };
 		EAF3DA4C2370B03800EE5F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF3DA552370B3D000EE5F74 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				EAF3DA332370B03600EE5F74 /* AppDelegate.swift */,
 				EAF3DA352370B03600EE5F74 /* SceneDelegate.swift */,
 				EAF3DA372370B03600EE5F74 /* ViewController.swift */,
+				EAF3DA552370B3D000EE5F74 /* Secrets.swift */,
 				EAF3DA3C2370B03800EE5F74 /* Assets.xcassets */,
 				EAF3DA3E2370B03800EE5F74 /* LaunchScreen.storyboard */,
 				EAF3DA412370B03800EE5F74 /* Info.plist */,
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF3DA382370B03600EE5F74 /* ViewController.swift in Sources */,
+				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
 				EAF3DA342370B03600EE5F74 /* AppDelegate.swift in Sources */,
 				EAF3DA362370B03600EE5F74 /* SceneDelegate.swift in Sources */,
 			);
