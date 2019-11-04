@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EAF3DA342370B03600EE5F74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA332370B03600EE5F74 /* AppDelegate.swift */; };
 		EAF3DA362370B03600EE5F74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA352370B03600EE5F74 /* SceneDelegate.swift */; };
-		EAF3DA382370B03600EE5F74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA372370B03600EE5F74 /* ViewController.swift */; };
+		EAF3DA382370B03600EE5F74 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA372370B03600EE5F74 /* MapSearchViewController.swift */; };
 		EAF3DA3D2370B03800EE5F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA3C2370B03800EE5F74 /* Assets.xcassets */; };
 		EAF3DA402370B03800EE5F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA3E2370B03800EE5F74 /* LaunchScreen.storyboard */; };
 		EAF3DA4B2370B03800EE5F74 /* foursquare_mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA4A2370B03800EE5F74 /* foursquare_mapsTests.swift */; };
@@ -21,6 +21,15 @@
 		EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA642370BCB900EE5F74 /* Venue.swift */; };
 		EAF3DA662370C20A00EE5F74 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA642370BCB900EE5F74 /* Venue.swift */; };
 		EAF3DA672370C21100EE5F74 /* venue.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA622370BC2600EE5F74 /* venue.json */; };
+		EAF3DA692370DAFA00EE5F74 /* ListSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA682370DAFA00EE5F74 /* ListSearchViewController.swift */; };
+		EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA6A2370DB0C00EE5F74 /* VenueDetailsViewController.swift */; };
+		EAF3DA6D2370DB1700EE5F74 /* AddVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA6C2370DB1700EE5F74 /* AddVenueViewController.swift */; };
+		EAF3DA6F2370DB2100EE5F74 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA6E2370DB2100EE5F74 /* CollectionsViewController.swift */; };
+		EAF3DA712370DB2C00EE5F74 /* CreateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA702370DB2C00EE5F74 /* CreateCollectionViewController.swift */; };
+		EAF3DA732370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */; };
+		EAF3DA752370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */; };
+		EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */; };
+		EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,7 @@
 		EAF3DA302370B03600EE5F74 /* foursquare-maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foursquare-maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF3DA332370B03600EE5F74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF3DA352370B03600EE5F74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EAF3DA372370B03600EE5F74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAF3DA372370B03600EE5F74 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		EAF3DA3C2370B03800EE5F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF3DA3F2370B03800EE5F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF3DA412370B03800EE5F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +59,15 @@
 		EAF3DA602370B82400EE5F74 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		EAF3DA622370BC2600EE5F74 /* venue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venue.json; sourceTree = "<group>"; };
 		EAF3DA642370BCB900EE5F74 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		EAF3DA682370DAFA00EE5F74 /* ListSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSearchViewController.swift; sourceTree = "<group>"; };
+		EAF3DA6A2370DB0C00EE5F74 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		EAF3DA6C2370DB1700EE5F74 /* AddVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueViewController.swift; sourceTree = "<group>"; };
+		EAF3DA6E2370DB2100EE5F74 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		EAF3DA702370DB2C00EE5F74 /* CreateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewController.swift; sourceTree = "<group>"; };
+		EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
+		EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				EAF3DA572370B76700EE5F74 /* Main.storyboard */,
+				EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */,
+				EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */,
+				EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */,
+				EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,7 +144,12 @@
 		EAF3DA5A2370B7BB00EE5F74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EAF3DA372370B03600EE5F74 /* ViewController.swift */,
+				EAF3DA372370B03600EE5F74 /* MapSearchViewController.swift */,
+				EAF3DA682370DAFA00EE5F74 /* ListSearchViewController.swift */,
+				EAF3DA6A2370DB0C00EE5F74 /* VenueDetailsViewController.swift */,
+				EAF3DA6C2370DB1700EE5F74 /* AddVenueViewController.swift */,
+				EAF3DA6E2370DB2100EE5F74 /* CollectionsViewController.swift */,
+				EAF3DA702370DB2C00EE5F74 /* CreateCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,11 +286,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF3DA382370B03600EE5F74 /* ViewController.swift in Sources */,
+				EAF3DA752370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift in Sources */,
+				EAF3DA6D2370DB1700EE5F74 /* AddVenueViewController.swift in Sources */,
+				EAF3DA382370B03600EE5F74 /* MapSearchViewController.swift in Sources */,
+				EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */,
+				EAF3DA712370DB2C00EE5F74 /* CreateCollectionViewController.swift in Sources */,
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
+				EAF3DA692370DAFA00EE5F74 /* ListSearchViewController.swift in Sources */,
+				EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */,
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
 				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
 				EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */,
+				EAF3DA732370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift in Sources */,
+				EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */,
+				EAF3DA6F2370DB2100EE5F74 /* CollectionsViewController.swift in Sources */,
 				EAF3DA342370B03600EE5F74 /* AppDelegate.swift in Sources */,
 				EAF3DA362370B03600EE5F74 /* SceneDelegate.swift in Sources */,
 			);
