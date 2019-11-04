@@ -15,6 +15,8 @@
 		EAF3DA4B2370B03800EE5F74 /* foursquare_mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA4A2370B03800EE5F74 /* foursquare_mapsTests.swift */; };
 		EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA552370B3D000EE5F74 /* Secrets.swift */; };
 		EAF3DA582370B76700EE5F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DA572370B76700EE5F74 /* Main.storyboard */; };
+		EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */; };
+		EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA602370B82400EE5F74 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		EAF3DA4C2370B03800EE5F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF3DA552370B3D000EE5F74 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Secrets.swift; sourceTree = "<group>"; };
 		EAF3DA572370B76700EE5F74 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EAF3DA602370B82400EE5F74 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 		EAF3DA5D2370B7F100EE5F74 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */,
+				EAF3DA602370B82400EE5F74 /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -245,6 +251,8 @@
 			files = (
 				EAF3DA382370B03600EE5F74 /* ViewController.swift in Sources */,
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
+				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
+				EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */,
 				EAF3DA342370B03600EE5F74 /* AppDelegate.swift in Sources */,
 				EAF3DA362370B03600EE5F74 /* SceneDelegate.swift in Sources */,
 			);
