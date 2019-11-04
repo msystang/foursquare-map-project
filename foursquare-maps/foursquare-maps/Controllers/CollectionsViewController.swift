@@ -10,6 +10,8 @@ import UIKit
 
 class CollectionsViewController: UIViewController {
 
+    @IBOutlet weak var collectionsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

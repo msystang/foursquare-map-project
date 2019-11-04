@@ -10,13 +10,21 @@ import UIKit
 
 class VenueDetailsViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var tipTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     /*
     // MARK: - Navigation
 

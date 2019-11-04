@@ -10,6 +10,8 @@ import UIKit
 
 class ListSearchViewController: UIViewController {
 
+    @IBOutlet weak var listSearchTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,13 +10,21 @@ import UIKit
 
 class AddVenueViewController: UIViewController {
 
+    @IBOutlet weak var collectionNameTextField: UITextField!
+    @IBOutlet weak var venueTipTextView: UITextView!
+    @IBOutlet weak var addToCollectionCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 

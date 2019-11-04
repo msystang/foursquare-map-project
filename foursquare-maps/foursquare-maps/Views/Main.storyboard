@@ -58,6 +58,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="line.horizontal.3" catalog="system"/>
                                 <connections>
+                                    <action selector="listButtonPressed:" destination="uuz-D8-Yym" eventType="touchUpInside" id="zvb-1b-Wxv"/>
                                     <segue destination="aSq-0o-OH5" kind="show" id="Mjx-hj-aca"/>
                                 </connections>
                             </button>
@@ -84,6 +85,12 @@
                         <viewLayoutGuide key="safeArea" id="tm9-wd-pAw"/>
                     </view>
                     <navigationItem key="navigationItem" id="oCk-54-uUt"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="2yJ-Ju-tBQ" id="5Gf-Fi-LkU"/>
+                        <outlet property="mapView" destination="JZp-IE-DYb" id="hFl-JX-Tk4"/>
+                        <outlet property="venueImageCollectionView" destination="FDf-fY-rWH" id="ySE-d1-DsC"/>
+                        <outlet property="venueSearchBar" destination="v94-bK-ywU" id="zSE-jb-MaK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efX-bz-585" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,15 +165,18 @@
                         <viewLayoutGuide key="safeArea" id="42T-tf-4g8"/>
                     </view>
                     <navigationItem key="navigationItem" id="vf4-4V-VII"/>
+                    <connections>
+                        <outlet property="listSearchTableView" destination="IX0-XQ-9mX" id="QSL-O9-yx3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLd-80-LML" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2403" y="-257"/>
         </scene>
-        <!--View Controller-->
+        <!--Venue Details View Controller-->
         <scene sceneID="NAS-eo-YoN">
             <objects>
-                <viewController id="zFY-t7-uNS" sceneMemberID="viewController">
+                <viewController id="zFY-t7-uNS" customClass="VenueDetailsViewController" customModule="foursquare_maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0pa-cr-Ob6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,10 +232,17 @@
                     <navigationItem key="navigationItem" id="eS9-av-ELc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iIf-RN-ZXB">
                             <connections>
+                                <action selector="addButtonPressed:" destination="zFY-t7-uNS" id="n7u-l7-Wol"/>
                                 <segue destination="7AX-Hh-srC" kind="show" id="3iq-7p-vhr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryLabel" destination="MY3-kW-AvV" id="4NO-01-YgL"/>
+                        <outlet property="imageView" destination="kUf-Hp-GSY" id="vN1-J5-zR4"/>
+                        <outlet property="nameLabel" destination="pne-VK-Gsl" id="RIA-bL-bEg"/>
+                        <outlet property="tipTextView" destination="uEK-8m-yqc" id="rNf-7K-Yqi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHf-tR-bEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,7 +251,7 @@
         <!--Add to Collection-->
         <scene sceneID="A3d-wi-wU5">
             <objects>
-                <viewController id="7AX-Hh-srC" sceneMemberID="viewController">
+                <viewController id="7AX-Hh-srC" customClass="AddVenueViewController" customModule="foursquare_maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkI-LH-JnR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +264,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6px-jo-5N6">
                                 <rect key="frame" x="20" y="162" width="374" height="269.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -290,17 +307,26 @@
                         <viewLayoutGuide key="safeArea" id="7PA-it-6g1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add to Collection" id="Ih9-ki-Hyo">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="gnj-JY-dLo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="gnj-JY-dLo">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="7AX-Hh-srC" id="E4g-mm-Z9v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addToCollectionCollectionView" destination="3P7-Df-Ori" id="77R-9C-lbd"/>
+                        <outlet property="collectionNameTextField" destination="G3f-92-He2" id="FKt-37-dve"/>
+                        <outlet property="venueTipTextView" destination="6px-jo-5N6" id="dGO-UQ-Wm4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSz-SB-eK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3778" y="-257"/>
         </scene>
-        <!--View Controller-->
+        <!--Collections View Controller-->
         <scene sceneID="sgm-Bi-5Wh">
             <objects>
-                <viewController id="JRi-5g-J0O" sceneMemberID="viewController">
+                <viewController id="JRi-5g-J0O" customClass="CollectionsViewController" customModule="foursquare_maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1gU-4k-SwQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,15 +368,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionsCollectionView" destination="wyY-7V-ici" id="VZn-YC-pdK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1SW-AM-5F6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1709" y="404"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Collection View Controller-->
         <scene sceneID="V9c-pF-uqd">
             <objects>
-                <viewController id="Kzt-7c-jsg" sceneMemberID="viewController">
+                <viewController id="Kzt-7c-jsg" customClass="CreateCollectionViewController" customModule="foursquare_maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="clf-GL-EJQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,8 +399,15 @@
                         <viewLayoutGuide key="safeArea" id="gTe-eZ-nko"/>
                     </view>
                     <navigationItem key="navigationItem" id="XN9-sm-tQh">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="A93-Gf-1oE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="A93-Gf-1oE">
+                            <connections>
+                                <action selector="createButtonPressed:" destination="Kzt-7c-jsg" id="ikP-tq-dB8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionNameTextField" destination="Tc1-CJ-yUW" id="8t7-Ml-6ce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlZ-ba-dAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

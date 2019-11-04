@@ -10,13 +10,19 @@ import UIKit
 
 class CreateCollectionViewController: UIViewController {
 
+    @IBOutlet weak var collectionNameTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func createButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     /*
     // MARK: - Navigation
 
