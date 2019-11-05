@@ -40,12 +40,33 @@ class MapSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setDelegates()
+        getLocationAuthorization()
     }
     
+    // MARK: - IBAction Methods
     @IBAction func listButtonPressed(_ sender: UIButton) {
     }
     
+    
+    // MARK: - Private Functions
+    private func setDelegates() {
+        locationManager.delegate = self
+        mapView.delegate = self
+    }
+    
+    private func getLocationAuthorization() {
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
+            case .authorizedAlways, .authorizedWhenInUse:
+                mapView.showsUserLocation = true
+                locationManager.requestLocation()
+                locationManager.startUpdatingLocation()
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            default:
+                locationManager.requestWhenInUseAuthorization()
+        }
+    }
     
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
@@ -63,3 +84,29 @@ class MapSearchViewController: UIViewController {
     
 }
 
+
+extension MapSearchViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("New locations: \(locations)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("An error occured: \(error)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("Authorization status changed to: \(status.rawValue)")
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestLocation()
+        default:
+            break
+        }
+    }
+    
+}
+
+extension MapSearchViewController: MKMapViewDelegate {
+    
+}
