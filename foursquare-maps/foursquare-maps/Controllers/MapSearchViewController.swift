@@ -33,7 +33,7 @@ class MapSearchViewController: UIViewController {
     var searchString: String? = nil {
         didSet {
             loadVenues()
-//            addMapAnnotations(venues: venues)
+            addMapAnnotations(venues: venues)
         }
     }
     
@@ -136,10 +136,11 @@ extension MapSearchViewController: MKMapViewDelegate {
 }
 
 extension MapSearchViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         switch searchBar.tag {
         case 0:
-            searchString = searchText
+            searchString = searchBar.text
         case 1:
             //TODO: Add location change here
             break
@@ -170,7 +171,22 @@ extension MapSearchViewController: UISearchBarDelegate {
         // TODO: stop activity indicator
         // TODO: Clear text when first responder
         // TODO: Clear old annotations
-        loadVenues()
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = searchBar.text
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            activityIndicator.stopAnimating()
+            
+            if response == nil {
+                print(error)
+            } else {
+                //remove annotations
+                let annotations = self.mapView.annotations
+                self.mapView.removeAnnotations(annotations)
+                self.loadVenues()
+                
+            }
+        }
         
     }
 }
