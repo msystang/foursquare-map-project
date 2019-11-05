@@ -42,6 +42,7 @@ class MapSearchViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         getLocationAuthorization()
+        setMapProperties()
     }
     
     // MARK: - IBAction Methods
@@ -55,11 +56,15 @@ class MapSearchViewController: UIViewController {
         mapView.delegate = self
     }
     
+    private func setMapProperties() {
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+    }
+    
     private func getLocationAuthorization() {
         let status = CLLocationManager.authorizationStatus()
         switch status {
             case .authorizedAlways, .authorizedWhenInUse:
-                mapView.showsUserLocation = true
                 locationManager.requestLocation()
                 locationManager.startUpdatingLocation()
                 locationManager.desiredAccuracy = kCLLocationAccuracyBest
