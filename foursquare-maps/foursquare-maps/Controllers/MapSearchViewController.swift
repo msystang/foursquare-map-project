@@ -32,7 +32,8 @@ class MapSearchViewController: UIViewController {
     
     var searchString: String? = nil {
         didSet {
-            addMapAnnotations(venues: venues)
+            loadVenues()
+//            addMapAnnotations(venues: venues)
         }
     }
     
@@ -72,6 +73,23 @@ class MapSearchViewController: UIViewController {
         }
     }
 
+    private func loadVenues() {
+        let urlStr = VenueAPIClient.getSearchResultsURLStr(from: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude, searchString: searchString ?? "")
+        
+        VenueAPIClient.manager.getVenues(urlStr: urlStr) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    // TODO: Make alert?
+                    print(error)
+                case .success(let venuesFromUrl):
+                    self.venues = venuesFromUrl
+                }
+            }
+        }
+    }
+    
+    
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
             let annotation: MKPointAnnotation = {
@@ -146,35 +164,8 @@ extension MapSearchViewController: UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
         
-        //search request
-        let searchRequest = MKLocalSearch.Request()
-        searchRequest.naturalLanguageQuery = searchBar.text
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        activeSearch.start { (response, error) in
-            activityIndicator.stopAnimating()
-            
-            if response == nil {
-                print(error)
-            } else {
-                //remove annotations
-                let annotations = self.mapView.annotations
-                self.mapView.removeAnnotations(annotations)
-                
-                //get data
-                let latitude = response?.boundingRegion.center.latitude
-                let longitude = response?.boundingRegion.center.longitude
-                
-                let newAnnotation = MKPointAnnotation()
-                newAnnotation.title = searchBar.text
-                //TODO: account for optionals
-                newAnnotation.coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
-                self.mapView.addAnnotation(newAnnotation)
-                
-                //to zoom in the annotation
-                let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
-                self.mapView.setRegion(coordinateRegion, animated: true)
-            }
-        }
+        // TODO: update search request based on which search bar was used
+        loadVenues()
         
     }
 }
