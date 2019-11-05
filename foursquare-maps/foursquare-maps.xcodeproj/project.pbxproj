@@ -30,6 +30,7 @@
 		EAF3DA752370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */; };
 		EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */; };
 		EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */; };
+		EAF3DA9F237211B800EE5F74 /* VenueAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */,
+				EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */,
 				EAF3DA602370B82400EE5F74 /* AppError.swift */,
 			);
 			path = Networking;
@@ -291,6 +294,7 @@
 				EAF3DA382370B03600EE5F74 /* MapSearchViewController.swift in Sources */,
 				EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */,
 				EAF3DA712370DB2C00EE5F74 /* CreateCollectionViewController.swift in Sources */,
+				EAF3DA9F237211B800EE5F74 /* VenueAPIClient.swift in Sources */,
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
 				EAF3DA692370DAFA00EE5F74 /* ListSearchViewController.swift in Sources */,
 				EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */,
