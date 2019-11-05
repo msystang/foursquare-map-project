@@ -24,24 +24,21 @@ struct VenueWrapper: Codable {
     let venues: [Venue]
 }
 
-struct Venue: Codable {
+class Venue: NSObject, Codable, MKAnnotation {
     let id: String
     let name: String
     // TODO: make location optional
     let location: Location
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+    }
 }
 
-class Location: NSObject, Codable, MKAnnotation {
+struct Location: Codable {
     let lat: Double
     let lng: Double
     let distance: Int
     let formattedAddress: [String]
-    
-    var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
-    }
-    
-    var hasValidCoordinates: Bool {
-        return coordinate.latitude != 0 && coordinate.longitude != 0
-    }
+
 }

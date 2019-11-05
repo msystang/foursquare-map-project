@@ -95,7 +95,7 @@ class MapSearchViewController: UIViewController {
             let annotation: MKPointAnnotation = {
                 let annotation = MKPointAnnotation()
                 annotation.title = venue.name
-                annotation.coordinate = CLLocationCoordinate2D(latitude: venue.location.lat, longitude: venue.location.lng)
+                annotation.coordinate = venue.coordinate
                 return annotation
             }()
             
