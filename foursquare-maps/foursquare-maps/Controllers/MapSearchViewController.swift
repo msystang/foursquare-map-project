@@ -54,6 +54,8 @@ class MapSearchViewController: UIViewController {
     private func setDelegates() {
         locationManager.delegate = self
         mapView.delegate = self
+        venueSearchBar.delegate = self
+        locationSearchBar.delegate = self
     }
     
     private func setMapProperties() {
@@ -165,6 +167,9 @@ extension MapSearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         // TODO: update search request based on which search bar was used
+        // TODO: stop activity indicator
+        // TODO: Clear text when first responder
+        // TODO: Clear old annotations
         loadVenues()
         
     }
