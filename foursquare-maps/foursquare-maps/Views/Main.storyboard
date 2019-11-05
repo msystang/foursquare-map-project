@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="358" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Location" translatesAutoresizingMaskIntoConstraints="NO" id="2yJ-Ju-tBQ">
+                            <searchBar tag="1" contentMode="redraw" searchBarStyle="minimal" placeholder="Location" translatesAutoresizingMaskIntoConstraints="NO" id="2yJ-Ju-tBQ">
                                 <rect key="frame" x="0.0" y="144" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
