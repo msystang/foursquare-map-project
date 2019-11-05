@@ -40,4 +40,7 @@ class Location: NSObject, Codable, MKAnnotation {
         return CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
     
+    var hasValidCoordinates: Bool {
+        return coordinate.latitude != 0 && coordinate.longitude != 0
+    }
 }
