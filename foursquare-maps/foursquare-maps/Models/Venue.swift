@@ -27,6 +27,7 @@ struct VenueWrapper: Codable {
 struct Venue: Codable {
     let id: String
     let name: String
+    // TODO: make location optional
     let location: Location
 }
 

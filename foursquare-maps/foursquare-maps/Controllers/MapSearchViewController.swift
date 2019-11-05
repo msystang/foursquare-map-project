@@ -72,7 +72,7 @@ class MapSearchViewController: UIViewController {
                 locationManager.requestWhenInUseAuthorization()
         }
     }
-    
+
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
             let annotation: MKPointAnnotation = {

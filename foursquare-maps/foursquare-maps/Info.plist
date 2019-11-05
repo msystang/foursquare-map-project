@@ -43,6 +43,8 @@
 	<string>LaunchScreen</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application needs access to your location to find venues.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
