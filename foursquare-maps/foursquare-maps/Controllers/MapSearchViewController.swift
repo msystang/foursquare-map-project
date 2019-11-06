@@ -197,6 +197,7 @@ extension MapSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venueImageCell", for: indexPath) as! VenueImageCollectionViewCell
+//        let venue = venues[indexPath.row]
         
 //        cell.imageView.image =
         return cell

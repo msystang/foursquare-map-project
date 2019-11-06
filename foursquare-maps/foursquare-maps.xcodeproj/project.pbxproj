@@ -31,6 +31,7 @@
 		EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */; };
 		EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */; };
 		EAF3DA9F237211B800EE5F74 /* VenueAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */; };
+		EAF3DAA123733B5100EE5F74 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAPIClient.swift; sourceTree = "<group>"; };
+		EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */,
 				EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */,
 				EAF3DA602370B82400EE5F74 /* AppError.swift */,
+				EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */,
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
 				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
+				EAF3DAA123733B5100EE5F74 /* ImageHelper.swift in Sources */,
 				EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */,
 				EAF3DA732370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift in Sources */,
 				EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */,
