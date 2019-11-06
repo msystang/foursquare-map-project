@@ -29,6 +29,7 @@ struct VenueImage: Codable {
     let prefix: String
     let suffix: String
     
+    //account for optionals?
     var imageUrlStr: String {
        return "\(prefix)original\(suffix)"
     }

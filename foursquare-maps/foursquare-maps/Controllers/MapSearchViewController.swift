@@ -27,6 +27,7 @@ class MapSearchViewController: UIViewController {
     var venues = [Venue]() {
         didSet {
             addMapAnnotations(venues: venues)
+            venueImageCollectionView.reloadData()
         }
     }
     
@@ -34,6 +35,7 @@ class MapSearchViewController: UIViewController {
         didSet {
             loadVenues()
             addMapAnnotations(venues: venues)
+            venueImageCollectionView.reloadData()
         }
     }
     
@@ -197,9 +199,38 @@ extension MapSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venueImageCell", for: indexPath) as! VenueImageCollectionViewCell
-//        let venue = venues[indexPath.row]
+        let venue = venues[indexPath.row]
         
-//        cell.imageView.image =
+        let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)
+        
+        
+        VenueImageAPIClient.manager.getVenueImages(urlStr: venueImageResultsUrlStr) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let venueImageResultsFromUrl):
+                    if !venueImageResultsFromUrl.isEmpty {
+                    
+                    let result = venueImageResultsFromUrl[0]
+                    let urlStr = result.imageUrlStr
+                    
+                    ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .failure(let error):
+                                print(error)
+                            case .success(let imageFromUrl):
+                                cell.imageView.image = imageFromUrl
+                            }
+                        }
+                    }
+                }
+                }
+            
+            }
+        }
+        
         return cell
     }
     
