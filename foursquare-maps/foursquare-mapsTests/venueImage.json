@@ -1,0 +1,43 @@
+{
+    "meta": {
+        "code": 200,
+        "requestId": "5dc3366502a1720028dc170e"
+    },
+    "response": {
+        "photos": {
+            "count": 1,
+            "items": [
+                {
+                    "id": "50bc0e56e4b0eebece7ce4fc",
+                    "createdAt": 1354501718,
+                    "source": {
+                        "name": "Foursquare for iOS",
+                        "url": "https://foursquare.com/download/#/iphone"
+                    },
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/14928924_3W17zCuwCt8-B7qOGH-PbHJ0ZrRZThLhzudnZqQkzIY.jpg",
+                    "width": 720,
+                    "height": 540,
+                    "user": {
+                        "id": "14928924",
+                        "firstName": "Sarone",
+                        "lastName": "K.",
+                        "gender": "male",
+                        "photo": {
+                            "prefix": "https://fastly.4sqi.net/img/user/",
+                            "suffix": "/E502MNVHVNEHA1FR.jpg"
+                        }
+                    },
+                    "checkin": {
+                        "id": "50bc0e52e4b0f4a5d7718119",
+                        "createdAt": 1354501714,
+                        "type": "checkin",
+                        "timeZoneOffset": -300
+                    },
+                    "visibility": "public"
+                }
+            ],
+            "dupesRemoved": 0
+        }
+    }
+}

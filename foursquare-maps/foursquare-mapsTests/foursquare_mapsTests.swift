@@ -45,7 +45,37 @@ class foursquare_mapsTests: XCTestCase {
         }
         
         // Assert
-        XCTAssertTrue(venues.count == 30, "Was expecting 30 best sellers, but found \(venues.count)")
+        XCTAssertTrue(venues.count == 30, "Was expecting 30 venues, but found \(venues.count)")
     }
+
     
+    func testVenueImageModelDecode() {
+        guard let jsonPath = Bundle.main.path(forResource: "venueImage", ofType: "json") else {
+            XCTFail("Could not find venueImage.json file")
+            return
+        }
+        
+        let jsonURL = URL(fileURLWithPath: jsonPath)
+        var venueImageJSONData = Data()
+        
+        do {
+            venueImageJSONData = try Data(contentsOf: jsonURL)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Act
+        var venueImages = [VenueImage]()
+        
+        do {
+            let venueImagesInfo = try VenueImageResponseWrapper.decodeVenueImagesFromData(from: venueImageJSONData)
+            venueImages = venueImagesInfo
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        // Assert
+        XCTAssertTrue(venueImages.count == 1, "Was expecting 1 venue image, but found \(venueImages.count)")
+    }
+
 }

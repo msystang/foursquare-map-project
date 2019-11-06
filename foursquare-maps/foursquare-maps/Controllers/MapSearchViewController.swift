@@ -24,7 +24,7 @@ class MapSearchViewController: UIViewController {
     private let searchRadius: CLLocationDistance = 2000
     
     // MARK: - Computed Properties
-    private var venues = [Venue]() {
+    var venues = [Venue]() {
         didSet {
             addMapAnnotations(venues: venues)
         }
