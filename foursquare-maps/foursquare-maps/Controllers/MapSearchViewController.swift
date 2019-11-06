@@ -56,6 +56,8 @@ class MapSearchViewController: UIViewController {
         mapView.delegate = self
         venueSearchBar.delegate = self
         locationSearchBar.delegate = self
+        venueImageCollectionView.delegate = self
+        venueImageCollectionView.dataSource = self
     }
     
     private func setMapProperties() {
@@ -168,9 +170,6 @@ extension MapSearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         // TODO: update search request based on which search bar was used
-        // TODO: stop activity indicator
-        // TODO: Clear text when first responder
-        // TODO: Clear old annotations
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchBar.text
         let activeSearch = MKLocalSearch(request: searchRequest)
@@ -189,4 +188,23 @@ extension MapSearchViewController: UISearchBarDelegate {
         }
         
     }
+}
+
+extension MapSearchViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return venues.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venueImageCell", for: indexPath) as! VenueImageCollectionViewCell
+        
+//        cell.imageView.image =
+        return cell
+    }
+    
+    
+}
+
+extension MapSearchViewController: UICollectionViewDelegateFlowLayout {
+    
 }
