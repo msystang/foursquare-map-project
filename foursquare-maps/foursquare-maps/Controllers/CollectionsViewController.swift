@@ -12,21 +12,43 @@ class CollectionsViewController: UIViewController {
 
     @IBOutlet weak var collectionsCollectionView: UICollectionView!
     
+    var collections = [Collection]() {
+        didSet {
+            collectionsCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpCollectionView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUpCollectionView() {
+        collectionsCollectionView.dataSource = self
+        collectionsCollectionView.delegate = self
     }
-    */
+}
 
+extension CollectionsViewController: UICollectionViewDelegateFlowLayout {
+    
+}
+
+extension CollectionsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collections.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionsCell", for: indexPath) as! CollectionsCollectionViewCell
+        let collection = collections[indexPath.row]
+        
+        cell.collectionNameLabel.text = collection.name
+        // TODO: assign image
+        
+        return cell
+    }
+    
+    
+    
 }

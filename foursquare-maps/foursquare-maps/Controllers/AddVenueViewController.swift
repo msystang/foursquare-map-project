@@ -18,7 +18,7 @@ class AddVenueViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // TODO: Set collectionview delegate and ds to self
         // Do any additional setup after loading the view.
         
         venueTipTextView.text = "Enter a tip for \(venue.name)!"
