@@ -37,6 +37,7 @@
 		EAF3DAA723736E8400EE5F74 /* venueImage.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DAA623736E8400EE5F74 /* venueImage.json */; };
 		EAF3DAA823736E9000EE5F74 /* venueImage.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DAA623736E8400EE5F74 /* venueImage.json */; };
 		EAF3DAA923736EC400EE5F74 /* VenueImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */; };
+		EAF3DAFF2376164C00EE5F74 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAFE2376164C00EE5F74 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		EAF3DAA223736CA700EE5F74 /* VenueImageAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImageAPIClient.swift; sourceTree = "<group>"; };
 		EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImage.swift; sourceTree = "<group>"; };
 		EAF3DAA623736E8400EE5F74 /* venueImage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venueImage.json; sourceTree = "<group>"; };
+		EAF3DAFE2376164C00EE5F74 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				EAF3DA642370BCB900EE5F74 /* Venue.swift */,
 				EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */,
+				EAF3DAFE2376164C00EE5F74 /* Collection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
 				EAF3DAA323736CA700EE5F74 /* VenueImageAPIClient.swift in Sources */,
 				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
+				EAF3DAFF2376164C00EE5F74 /* Collection.swift in Sources */,
 				EAF3DAA123733B5100EE5F74 /* ImageHelper.swift in Sources */,
 				EAF3DA5F2370B80B00EE5F74 /* NetworkManager.swift in Sources */,
 				EAF3DA732370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift in Sources */,
