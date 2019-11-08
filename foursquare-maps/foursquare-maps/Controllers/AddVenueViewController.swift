@@ -14,14 +14,17 @@ class AddVenueViewController: UIViewController {
     @IBOutlet weak var venueTipTextView: UITextView!
     @IBOutlet weak var addToCollectionCollectionView: UICollectionView!
     
+    var venue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        venueTipTextView.text = "Enter a tip for \(venue.name)!"
     }
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func addToCollectionButtonPressed(_ sender: UIBarButtonItem) {
     }
     
     
