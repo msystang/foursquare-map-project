@@ -422,6 +422,7 @@
                                         <connections>
                                             <outlet property="collectionImageView" destination="lNf-hW-S3a" id="0zH-K8-pZj"/>
                                             <outlet property="collectionNameLabel" destination="8bB-Qu-eTU" id="L0F-BC-BHs"/>
+                                            <segue destination="aSq-0o-OH5" kind="show" id="7GD-Md-40j"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -551,4 +552,7 @@
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7GD-Md-40j"/>
+    </inferredMetricsTieBreakers>
 </document>
