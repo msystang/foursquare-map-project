@@ -361,7 +361,11 @@
                         <viewLayoutGuide key="safeArea" id="7PA-it-6g1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add to Collection" id="Ih9-ki-Hyo">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="gnj-JY-dLo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="gnj-JY-dLo">
+                            <connections>
+                                <action selector="addToCollectionButtonPressed:" destination="7AX-Hh-srC" id="yfa-bu-lKa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -558,6 +562,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9wL-t0-4E2"/>
+        <segue reference="7GD-Md-40j"/>
     </inferredMetricsTieBreakers>
 </document>

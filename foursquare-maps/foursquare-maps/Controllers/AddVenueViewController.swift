@@ -14,6 +14,9 @@ class AddVenueViewController: UIViewController {
     @IBOutlet weak var venueTipTextView: UITextView!
     @IBOutlet weak var addToCollectionCollectionView: UICollectionView!
     
+    
+    // TODO: check to see if it's already saved in a specific category when saving
+    
     var venue: Venue!
     
     var collections = [Collection]() {
@@ -34,7 +37,17 @@ class AddVenueViewController: UIViewController {
     }
     
     @IBAction func addToCollectionButtonPressed(_ sender: UIBarButtonItem) {
-    
+        if let name = collectionNameTextField.text {
+            do {
+                let newCollection = Collection(name: name, venues: [venue])
+                try CollectionPersistenceHelper.manager.save(newCollection: newCollection)
+                loadCollections()
+                //TODO: show alert & pop?
+                print("saved")
+            } catch {
+                print(error)
+            }
+        }
     }
 
     private func setUpCollectionView() {
@@ -69,5 +82,14 @@ extension AddVenueViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let collection = collections[indexPath.row]
+        
+        do {
+            // TODO: edit persistence manager to replace old collection with new collection + venue
+        } catch {
+            
+        }
+    }
     
 }
