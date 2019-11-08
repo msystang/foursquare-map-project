@@ -69,6 +69,8 @@ extension CollectionsViewController: UICollectionViewDataSource {
         if let venues = collection.venues {
             listSearchVC.venues = venues
             
+//            TODO: hide nav bar from here?
+            // listSearchVC.navigationController?.navigationBar.isHidden = true
             navigationController?.pushViewController(listSearchVC, animated: true)
         } else {
             //alert

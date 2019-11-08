@@ -200,10 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				EAF3DA5E2370B80B00EE5F74 /* NetworkManager.swift */,
-				EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */,
-				EAF3DAA223736CA700EE5F74 /* VenueImageAPIClient.swift */,
 				EAF3DA602370B82400EE5F74 /* AppError.swift */,
 				EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */,
+				EAF3DB072376279100EE5F74 /* API Clients */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -215,6 +214,15 @@
 				EAF3DB052376174F00EE5F74 /* CollectionPersistenceHelper.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		EAF3DB072376279100EE5F74 /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */,
+				EAF3DAA223736CA700EE5F74 /* VenueImageAPIClient.swift */,
+			);
+			path = "API Clients";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
