@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - VenueImageResponseWrapper
 struct VenueImageResponseWrapper: Codable {
     let response: VenueImageResponse
     
@@ -17,14 +18,17 @@ struct VenueImageResponseWrapper: Codable {
     }
 }
 
+// MARK: - VenueImageResponse
 struct VenueImageResponse: Codable {
     let photos: VenueImageWrapper
 }
 
+// MARK: - VenueImageWrapper
 struct VenueImageWrapper: Codable {
     let items: [VenueImage]
 }
 
+// MARK: - VenueImage
 struct VenueImage: Codable {
     let prefix: String
     let suffix: String

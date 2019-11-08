@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Collection
 struct Collection: Codable {
     let name: String
     let venues: [Venue]?

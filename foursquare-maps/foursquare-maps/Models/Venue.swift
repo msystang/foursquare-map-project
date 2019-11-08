@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
+// MARK: - Venues
 struct Venues: Codable {
     let response: VenueWrapper
     
@@ -20,10 +21,12 @@ struct Venues: Codable {
     
 }
 
+// MARK: - VenueWrapper
 struct VenueWrapper: Codable {
     let venues: [Venue]
 }
 
+// MARK: - Venue
 class Venue: NSObject, Codable, MKAnnotation {
     let id: String
     let name: String
@@ -36,6 +39,7 @@ class Venue: NSObject, Codable, MKAnnotation {
     }
 }
 
+// MARK: - Location
 struct Location: Codable {
     let lat: Double
     let lng: Double
@@ -44,6 +48,7 @@ struct Location: Codable {
 
 }
 
+// MARK: - Category
 struct Category: Codable {
     let name: String
 }

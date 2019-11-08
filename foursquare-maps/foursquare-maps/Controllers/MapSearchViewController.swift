@@ -47,14 +47,7 @@ class MapSearchViewController: UIViewController {
         setMapProperties()
     }
     
-    // MARK: - IBAction Methods
-//    @IBAction func listButtonPressed(_ sender: UIButton) {
-//        let listSearchVC = ListSearchViewController()
-//        listSearchVC.venues = venues
-//
-//        navigationController?.pushViewController(listSearchVC, animated: true)
-//    }
-    
+    // MARK: - Navigation Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue")}
         
@@ -107,8 +100,7 @@ class MapSearchViewController: UIViewController {
             }
         }
     }
-    
-    
+
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
             let annotation: MKPointAnnotation = {
@@ -125,7 +117,7 @@ class MapSearchViewController: UIViewController {
     
 }
 
-
+// MARK: - CLLocation Delegate Methods
 extension MapSearchViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("New locations: \(locations)")
@@ -148,10 +140,12 @@ extension MapSearchViewController: CLLocationManagerDelegate {
     
 }
 
+// MARK: - MKMapView Delegate Methods
 extension MapSearchViewController: MKMapViewDelegate {
     
 }
 
+// MARK: - SearchBar Delegate Methods
 extension MapSearchViewController: UISearchBarDelegate {
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -205,6 +199,7 @@ extension MapSearchViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - CollectionView Data Source Methods
 extension MapSearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return venues.count
@@ -252,6 +247,7 @@ extension MapSearchViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - CollectionView Delegate Methods
 extension MapSearchViewController: UICollectionViewDelegateFlowLayout {
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: 200, height: 200)

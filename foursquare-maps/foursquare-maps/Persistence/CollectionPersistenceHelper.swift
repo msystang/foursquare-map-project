@@ -9,8 +9,10 @@
 import Foundation
 
 class CollectionPersistenceHelper {
+    // MARK: - Static Properties
     static let manager = CollectionPersistenceHelper()
     
+    // MARK: - Instance Methods
     func save(newCollection: Collection) throws {
         try persistenceHelper.save(newObject: newCollection)
     }
@@ -19,6 +21,7 @@ class CollectionPersistenceHelper {
         return try persistenceHelper.getObjectsFromFileManager()
     }
     
+    // MARK: - Initializers and Private Properties
     private let persistenceHelper = PersistenceManager<Collection>(fileName: "Collection.plist")
     
     private init() {}
