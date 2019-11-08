@@ -39,6 +39,7 @@
 		EAF3DAA923736EC400EE5F74 /* VenueImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */; };
 		EAF3DAFF2376164C00EE5F74 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAFE2376164C00EE5F74 /* Collection.swift */; };
 		EAF3DB032376170F00EE5F74 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */; };
+		EAF3DB062376174F00EE5F74 /* CollectionPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DB052376174F00EE5F74 /* CollectionPersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		EAF3DAA623736E8400EE5F74 /* venueImage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venueImage.json; sourceTree = "<group>"; };
 		EAF3DAFE2376164C00EE5F74 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		EAF3DB052376174F00EE5F74 /* CollectionPersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */,
+				EAF3DB052376174F00EE5F74 /* CollectionPersistenceHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				EAF3DA692370DAFA00EE5F74 /* ListSearchViewController.swift in Sources */,
 				EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */,
 				EAF3DB032376170F00EE5F74 /* PersistenceManager.swift in Sources */,
+				EAF3DB062376174F00EE5F74 /* CollectionPersistenceHelper.swift in Sources */,
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
 				EAF3DAA323736CA700EE5F74 /* VenueImageAPIClient.swift in Sources */,
 				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
