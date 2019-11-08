@@ -48,9 +48,22 @@ class MapSearchViewController: UIViewController {
     }
     
     // MARK: - IBAction Methods
-    @IBAction func listButtonPressed(_ sender: UIButton) {
-    }
+//    @IBAction func listButtonPressed(_ sender: UIButton) {
+//        let listSearchVC = ListSearchViewController()
+//        listSearchVC.venues = venues
+//
+//        navigationController?.pushViewController(listSearchVC, animated: true)
+//    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue")}
+        
+        if segueIdentifier == "mapToListSegue" {
+            if let listSearchVC = segue.destination as? ListSearchViewController {
+                listSearchVC.venues = venues
+            }
+        }
+    }
     
     // MARK: - Private Functions
     private func setDelegates() {

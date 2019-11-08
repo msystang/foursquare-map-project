@@ -76,8 +76,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="line.horizontal.3" catalog="system"/>
                                 <connections>
-                                    <action selector="listButtonPressed:" destination="uuz-D8-Yym" eventType="touchUpInside" id="zvb-1b-Wxv"/>
-                                    <segue destination="aSq-0o-OH5" kind="show" id="Mjx-hj-aca"/>
+                                    <segue destination="aSq-0o-OH5" kind="show" identifier="mapToListSegue" id="9wL-t0-4E2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -187,7 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vf4-4V-VII"/>
                     <connections>
-                        <outlet property="listSearchTableView" destination="IX0-XQ-9mX" id="QSL-O9-yx3"/>
+                        <outlet property="listSearchTableView" destination="IX0-XQ-9mX" id="GL4-SD-ZaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLd-80-LML" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -552,6 +551,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mjx-hj-aca"/>
+        <segue reference="9wL-t0-4E2"/>
     </inferredMetricsTieBreakers>
 </document>

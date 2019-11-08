@@ -12,23 +12,23 @@ class ListSearchViewController: UIViewController {
 
     @IBOutlet weak var listSearchTableView: UITableView!
     
-    var venues = [Venue]() {
-        didSet {
-            listSearchTableView.reloadData()
-        }
-    }
+    var venues = [Venue]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         listSearchTableView.delegate = self
         listSearchTableView.dataSource = self
+        
+        listSearchTableView.reloadData()
     }
     
 }
 
 extension ListSearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }
 
 
@@ -38,7 +38,8 @@ extension ListSearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listSearchTableView.dequeueReusableCell(withIdentifier: "listSearchCell", for: indexPath) as! ListSearchTableViewCell
+        guard let cell = listSearchTableView.dequeueReusableCell(withIdentifier: "listSearchCell", for: indexPath) as? ListSearchTableViewCell else { return UITableViewCell() }
+        
         let venue = venues[indexPath.row]
         
         cell.nameLabel.text = venue.name
