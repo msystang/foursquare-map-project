@@ -12,8 +12,6 @@ class CreateCollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionNameTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +19,19 @@ class CreateCollectionViewController: UIViewController {
     }
     
     @IBAction func createButtonPressed(_ sender: UIBarButtonItem) {
+        //TODO: account for empty strings
+        if let name = collectionNameTextField.text {
+            
+            let newCollection = Collection(name: name, venues: nil)
+            
+            do {
+                try CollectionPersistenceHelper.manager.save(newCollection: newCollection)
+            } catch {
+                
+            }
+        } else {
+            //alert
+        }
     }
     
     /*

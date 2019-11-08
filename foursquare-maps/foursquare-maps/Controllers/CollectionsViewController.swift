@@ -24,6 +24,15 @@ class CollectionsViewController: UIViewController {
         setUpCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            collections = try CollectionPersistenceHelper.manager.get()
+        } catch {
+            //TODO: error alert?
+            print("can't load collections")
+        }
+    }
+    
     private func setUpCollectionView() {
         collectionsCollectionView.dataSource = self
         collectionsCollectionView.delegate = self
