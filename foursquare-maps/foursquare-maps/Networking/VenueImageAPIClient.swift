@@ -17,7 +17,7 @@ class VenueImageAPIClient {
     // MARK: - Instance Methods
     
     static func getImageResultsURLStr(for venue: Venue) -> String {
-       return "https://api.foursquare.com/v2/venues/\(venue.id)/photos?client_id=\(Secrets.foursquareClientID)&client_secret=\(Secrets.foursquareSecret)&v=20180323&limit=49"
+       return "https://api.foursquare.com/v2/venues/\(venue.id)/photos?client_id=\(Secrets.foursquareClientID)&client_secret=\(Secrets.foursquareSecret)&v=20180323&limit=5"
     }
     
     func getVenueImages(urlStr: String, completionHandler: @escaping (Result<[VenueImage], AppError>) -> ())  {
