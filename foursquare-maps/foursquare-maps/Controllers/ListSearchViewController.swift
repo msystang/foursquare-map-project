@@ -29,6 +29,16 @@ extension ListSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let venueDetailsVC = storyboard.instantiateViewController(identifier: "venueDetailsVC") as VenueDetailsViewController
+        
+        let venue = venues[indexPath.row]
+        
+        venueDetailsVC.venue = venue
+        navigationController?.pushViewController(venueDetailsVC, animated: true)
+    }
 }
 
 

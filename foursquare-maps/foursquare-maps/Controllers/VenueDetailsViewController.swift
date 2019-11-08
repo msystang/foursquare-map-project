@@ -15,13 +15,29 @@ class VenueDetailsViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tipTextView: UITextView!
     
+    var venue: Venue! {
+        didSet{
+//            nameLabel.text = venue.name
+//                   //TODO: add every category
+//            categoryLabel.text = venue.categories[0].name
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
+        
+        //TODO: add image
+        //TODO: add textview functionality
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nameLabel.text = venue.name
+               //TODO: add every category
+               categoryLabel.text = venue.categories[0].name
+    }
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
     }
     
