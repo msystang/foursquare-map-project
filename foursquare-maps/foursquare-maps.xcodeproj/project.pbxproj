@@ -38,6 +38,7 @@
 		EAF3DAA823736E9000EE5F74 /* venueImage.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF3DAA623736E8400EE5F74 /* venueImage.json */; };
 		EAF3DAA923736EC400EE5F74 /* VenueImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */; };
 		EAF3DAFF2376164C00EE5F74 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAFE2376164C00EE5F74 /* Collection.swift */; };
+		EAF3DB032376170F00EE5F74 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		EAF3DAA423736D2A00EE5F74 /* VenueImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImage.swift; sourceTree = "<group>"; };
 		EAF3DAA623736E8400EE5F74 /* venueImage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venueImage.json; sourceTree = "<group>"; };
 		EAF3DAFE2376164C00EE5F74 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		EAF3DA322370B03600EE5F74 /* foursquare-maps */ = {
 			isa = PBXGroup;
 			children = (
+				EAF3DB042376171700EE5F74 /* Persistence */,
 				EAF3DA5D2370B7F100EE5F74 /* Networking */,
 				EAF3DA5C2370B7E800EE5F74 /* Models */,
 				EAF3DA5A2370B7BB00EE5F74 /* Controllers */,
@@ -201,6 +204,14 @@
 				EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		EAF3DB042376171700EE5F74 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				EAF3DB022376170F00EE5F74 /* PersistenceManager.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,
 				EAF3DA692370DAFA00EE5F74 /* ListSearchViewController.swift in Sources */,
 				EAF3DA6B2370DB0C00EE5F74 /* VenueDetailsViewController.swift in Sources */,
+				EAF3DB032376170F00EE5F74 /* PersistenceManager.swift in Sources */,
 				EAF3DA612370B82400EE5F74 /* AppError.swift in Sources */,
 				EAF3DAA323736CA700EE5F74 /* VenueImageAPIClient.swift in Sources */,
 				EAF3DA652370BCB900EE5F74 /* Venue.swift in Sources */,
