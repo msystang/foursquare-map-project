@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchListTableViewCell: UITableViewCell {
+class ListSearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

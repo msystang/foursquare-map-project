@@ -28,7 +28,7 @@
 		EAF3DA712370DB2C00EE5F74 /* CreateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA702370DB2C00EE5F74 /* CreateCollectionViewController.swift */; };
 		EAF3DA732370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */; };
 		EAF3DA752370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */; };
-		EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */; };
+		EAF3DA772370DBAA00EE5F74 /* ListSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA762370DBAA00EE5F74 /* ListSearchTableViewCell.swift */; };
 		EAF3DA792370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */; };
 		EAF3DA9F237211B800EE5F74 /* VenueAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */; };
 		EAF3DAA123733B5100EE5F74 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */; };
@@ -73,7 +73,7 @@
 		EAF3DA702370DB2C00EE5F74 /* CreateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionViewController.swift; sourceTree = "<group>"; };
 		EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
+		EAF3DA762370DBAA00EE5F74 /* ListSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSearchTableViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAF3DA9E237211B800EE5F74 /* VenueAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAPIClient.swift; sourceTree = "<group>"; };
 		EAF3DAA023733B5100EE5F74 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			children = (
 				EAF3DA572370B76700EE5F74 /* Main.storyboard */,
 				EAF3DA722370DB8D00EE5F74 /* VenueImageCollectionViewCell.swift */,
-				EAF3DA762370DBAA00EE5F74 /* SearchListTableViewCell.swift */,
+				EAF3DA762370DBAA00EE5F74 /* ListSearchTableViewCell.swift */,
 				EAF3DA782370DC2C00EE5F74 /* AddVenueCollectionViewCell.swift */,
 				EAF3DA742370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift */,
 			);
@@ -308,7 +308,7 @@
 				EAF3DA752370DB9B00EE5F74 /* CollectionsCollectionViewCell.swift in Sources */,
 				EAF3DA6D2370DB1700EE5F74 /* AddVenueViewController.swift in Sources */,
 				EAF3DA382370B03600EE5F74 /* MapSearchViewController.swift in Sources */,
-				EAF3DA772370DBAA00EE5F74 /* SearchListTableViewCell.swift in Sources */,
+				EAF3DA772370DBAA00EE5F74 /* ListSearchTableViewCell.swift in Sources */,
 				EAF3DA712370DB2C00EE5F74 /* CreateCollectionViewController.swift in Sources */,
 				EAF3DA9F237211B800EE5F74 /* VenueAPIClient.swift in Sources */,
 				EAF3DA562370B3D000EE5F74 /* Secrets.swift in Sources */,

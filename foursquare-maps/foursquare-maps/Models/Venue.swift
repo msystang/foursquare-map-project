@@ -29,6 +29,7 @@ class Venue: NSObject, Codable, MKAnnotation {
     let name: String
     // TODO: make location optional
     let location: Location
+    let categories: [Category]
     
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
@@ -41,4 +42,8 @@ struct Location: Codable {
     let distance: Int
     let formattedAddress: [String]
 
+}
+
+struct Category: Codable {
+    let name: String
 }

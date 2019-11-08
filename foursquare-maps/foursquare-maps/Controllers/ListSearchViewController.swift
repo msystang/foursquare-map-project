@@ -12,21 +12,73 @@ class ListSearchViewController: UIViewController {
 
     @IBOutlet weak var listSearchTableView: UITableView!
     
+    var venues = [Venue]() {
+        didSet {
+            listSearchTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        listSearchTableView.delegate = self
+        listSearchTableView.dataSource = self
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension ListSearchViewController: UITableViewDelegate {
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+extension ListSearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        venues.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = listSearchTableView.dequeueReusableCell(withIdentifier: "listSearchCell", for: indexPath) as! ListSearchTableViewCell
+        let venue = venues[indexPath.row]
+        
+        cell.nameLabel.text = venue.name
+        //TODO Print every category in array
+        cell.categoryLabel.text = venue.categories[0].name
+        
+        let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)
+               print(venueImageResultsUrlStr)
+               
+               VenueImageAPIClient.manager.getVenueImages(urlStr: venueImageResultsUrlStr) { (result) in
+                   DispatchQueue.main.async {
+                       switch result {
+                       case .failure(let error):
+                           print(error)
+                       case .success(let venueImageResultsFromUrl):
+                           if !venueImageResultsFromUrl.isEmpty {
+                               
+                               let result = venueImageResultsFromUrl[0]
+                               let urlStr = result.imageUrlStr
+                               print(urlStr)
+                               
+                               ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                                   DispatchQueue.main.async {
+                                       switch result {
+                                       case .failure(let error):
+                                           print(error)
+                                       case .success(let imageFromUrl):
+                                            cell.venueImageView.image = imageFromUrl
+                                           // TODO: adjust image scale
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                       
+                   }
+               }
+        
+        return cell
+    }
+    
+    
 }

@@ -211,24 +211,25 @@ extension MapSearchViewController: UICollectionViewDataSource {
                     print(error)
                 case .success(let venueImageResultsFromUrl):
                     if !venueImageResultsFromUrl.isEmpty {
-                    
-                    let result = venueImageResultsFromUrl[0]
-                    let urlStr = result.imageUrlStr
+                        
+                        let result = venueImageResultsFromUrl[0]
+                        let urlStr = result.imageUrlStr
                         print(urlStr)
-                    
-                    ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
-                        DispatchQueue.main.async {
-                            switch result {
-                            case .failure(let error):
-                                print(error)
-                            case .success(let imageFromUrl):
-                                cell.imageView.image = imageFromUrl
+                        
+                        ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .failure(let error):
+                                    print(error)
+                                case .success(let imageFromUrl):
+                                    cell.imageView.image = imageFromUrl
+                                    // TODO: adjust image scale
+                                }
                             }
                         }
                     }
                 }
-                }
-            
+                
             }
         }
         
