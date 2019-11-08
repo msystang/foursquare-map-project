@@ -58,6 +58,23 @@ extension CollectionsViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let listSearchVC = storyboard.instantiateViewController(identifier: "listSearchVC") as ListSearchViewController
+        
+        let collection = collections[indexPath.row]
+        
+        if let venues = collection.venues {
+            listSearchVC.venues = venues
+            
+            navigationController?.pushViewController(listSearchVC, animated: true)
+        } else {
+            //alert
+            print("no venues saved in this collection yet")
+        }
+    }
     
     
 }
