@@ -9,7 +9,8 @@
 import UIKit
 
 class ListSearchViewController: UIViewController {
-
+    //TODO: Print every category in array?
+    
     // MARK: - IB Outlets
     @IBOutlet weak var listSearchTableView: UITableView!
     
@@ -57,7 +58,7 @@ extension ListSearchViewController: UITableViewDataSource {
         let venue = venues[indexPath.row]
         
         cell.nameLabel.text = venue.name
-        //TODO Print every category in array
+        
         cell.categoryLabel.text = venue.categories[0].name
         
         let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)

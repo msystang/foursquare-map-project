@@ -10,6 +10,10 @@ import UIKit
 
 class VenueDetailsViewController: UIViewController {
 
+    //TODO: Print every category in array?
+    //TODO: add image
+    //TODO: add tips
+    
     // MARK: - IB Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -24,14 +28,8 @@ class VenueDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         nameLabel.text = venue.name
-        //TODO: add every category
         categoryLabel.text = venue.categories[0].name
-        //TODO: add image
-        //TODO: add tips
-        
-        // TODO: Add button
         
     }
     

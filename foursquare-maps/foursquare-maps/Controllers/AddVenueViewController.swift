@@ -83,7 +83,7 @@ extension AddVenueViewController: UICollectionViewDataSource {
         let collection = collections[indexPath.row]
         
         cell.venueNameLabel.text = collection.name
-        //add cell image
+        //TODO: add cell image
         
         return cell
     }

@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 
 class MapSearchViewController: UIViewController {
+    // TODO: Figure out why image resizes in cell
+    // TODO: update search request based on which search bar was used, update location search bar
     
     // MARK: - IBOutlets
     @IBOutlet weak var venueSearchBar: UISearchBar!
@@ -76,15 +78,15 @@ class MapSearchViewController: UIViewController {
     private func getLocationAuthorization() {
         let status = CLLocationManager.authorizationStatus()
         switch status {
-            case .authorizedAlways, .authorizedWhenInUse:
-                locationManager.requestLocation()
-                locationManager.startUpdatingLocation()
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            default:
-                locationManager.requestWhenInUseAuthorization()
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        default:
+            locationManager.requestWhenInUseAuthorization()
         }
     }
-
+    
     private func loadVenues() {
         let urlStr = VenueAPIClient.getSearchResultsURLStr(from: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude, searchString: searchString ?? "")
         
@@ -100,7 +102,7 @@ class MapSearchViewController: UIViewController {
             }
         }
     }
-
+    
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
             let annotation: MKPointAnnotation = {
@@ -147,7 +149,7 @@ extension MapSearchViewController: MKMapViewDelegate {
 
 // MARK: - SearchBar Delegate Methods
 extension MapSearchViewController: UISearchBarDelegate {
-
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         switch searchBar.tag {
         case 0:
@@ -178,7 +180,6 @@ extension MapSearchViewController: UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
         
-        // TODO: update search request based on which search bar was used
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchBar.text
         let activeSearch = MKLocalSearch(request: searchRequest)
@@ -210,8 +211,8 @@ extension MapSearchViewController: UICollectionViewDataSource {
         let venue = venues[indexPath.row]
         
         let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)
-        print(venueImageResultsUrlStr)
         
+        //TODO: Determine if need async for apiclients
         VenueImageAPIClient.manager.getVenueImages(urlStr: venueImageResultsUrlStr) { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -222,7 +223,6 @@ extension MapSearchViewController: UICollectionViewDataSource {
                         
                         let result = venueImageResultsFromUrl[0]
                         let urlStr = result.imageUrlStr
-                        print(urlStr)
                         
                         ImageHelper.manager.getImage(urlStr: urlStr) { (result) in
                             DispatchQueue.main.async {
@@ -231,7 +231,7 @@ extension MapSearchViewController: UICollectionViewDataSource {
                                     print(error)
                                 case .success(let imageFromUrl):
                                     cell.imageView.image = imageFromUrl
-                                    // TODO: adjust image scale
+                                    cell.imageView.contentMode = .scaleAspectFill
                                 }
                             }
                         }
@@ -249,7 +249,16 @@ extension MapSearchViewController: UICollectionViewDataSource {
 
 // MARK: - CollectionView Delegate Methods
 extension MapSearchViewController: UICollectionViewDelegateFlowLayout {
-    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: 200, height: 200)
+    
+//    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
+//
+//        return CGSize(width: 200, height: 200)
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let imgWidth = view.bounds.width/5.0
+        let imgHeight = imgWidth
+
+        return CGSize(width: imgWidth, height: imgHeight)
     }
 }

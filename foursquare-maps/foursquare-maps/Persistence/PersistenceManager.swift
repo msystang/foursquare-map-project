@@ -9,6 +9,7 @@
 import Foundation
 
 class PersistenceManager<T: Codable> {
+    
     // MARK: - Instance Methods
     func getObjectsFromFileManager() throws -> [T] {
         guard let data = FileManager.default.contents(atPath: url.path) else {
