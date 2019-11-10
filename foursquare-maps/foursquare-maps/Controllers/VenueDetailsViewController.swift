@@ -10,13 +10,17 @@ import UIKit
 
 class VenueDetailsViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tipTextView: UITextView!
     
+    // MARK: - Internal Properties
     var venue: Venue!
     
+    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +35,7 @@ class VenueDetailsViewController: UIViewController {
         
     }
     
+    // MARK: - IBAction Functions
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let addVenueVC = storyboard.instantiateViewController(identifier: "addVenueVC") as AddVenueViewController

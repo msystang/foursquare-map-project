@@ -10,13 +10,14 @@ import UIKit
 
 class AddVenueViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var collectionNameTextField: UITextField!
     @IBOutlet weak var venueTipTextView: UITextView!
     @IBOutlet weak var addToCollectionCollectionView: UICollectionView!
     
     
     // TODO: check to see if it's already saved in a specific category when saving
-    
+    // MARK: - Internal Properties
     var venue: Venue!
     
     var collections = [Collection]() {
@@ -25,6 +26,7 @@ class AddVenueViewController: UIViewController {
         }
     }
     
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
@@ -36,6 +38,7 @@ class AddVenueViewController: UIViewController {
         loadCollections()
     }
     
+    // MARK: - IBAction Functions
     @IBAction func addToCollectionButtonPressed(_ sender: UIBarButtonItem) {
         if let name = collectionNameTextField.text {
             do {
@@ -50,6 +53,7 @@ class AddVenueViewController: UIViewController {
         }
     }
 
+    // MARK: - Private Functions
     private func setUpCollectionView() {
         addToCollectionCollectionView.delegate = self
         addToCollectionCollectionView.dataSource = self
@@ -64,8 +68,10 @@ class AddVenueViewController: UIViewController {
     }
 }
 
+// MARK: - CollectionView Delegate Methods
 extension AddVenueViewController: UICollectionViewDelegateFlowLayout {}
 
+// MARK: - CollectionView DataSource Methods
 extension AddVenueViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collections.count

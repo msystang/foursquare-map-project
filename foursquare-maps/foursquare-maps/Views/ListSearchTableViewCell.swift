@@ -10,6 +10,7 @@ import UIKit
 
 class ListSearchTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var venueImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!

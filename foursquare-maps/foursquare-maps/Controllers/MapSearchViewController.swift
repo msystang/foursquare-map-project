@@ -117,7 +117,7 @@ class MapSearchViewController: UIViewController {
     
 }
 
-// MARK: - CLLocation Delegate Methods
+// MARK: - Location Delegate Methods
 extension MapSearchViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("New locations: \(locations)")
@@ -140,7 +140,7 @@ extension MapSearchViewController: CLLocationManagerDelegate {
     
 }
 
-// MARK: - MKMapView Delegate Methods
+// MARK: - MapView Delegate Methods
 extension MapSearchViewController: MKMapViewDelegate {
     
 }

@@ -10,14 +10,17 @@ import UIKit
 
 class CreateCollectionViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var collectionNameTextField: UITextField!
     
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - IBAction Functions
     @IBAction func createButtonPressed(_ sender: UIBarButtonItem) {
         //TODO: account for empty strings
         if let name = collectionNameTextField.text {
@@ -34,14 +37,5 @@ class CreateCollectionViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

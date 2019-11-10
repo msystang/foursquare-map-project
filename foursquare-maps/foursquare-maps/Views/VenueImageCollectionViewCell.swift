@@ -10,6 +10,7 @@ import UIKit
 
 class VenueImageCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     
 }

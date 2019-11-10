@@ -10,10 +10,13 @@ import UIKit
 
 class ListSearchViewController: UIViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet weak var listSearchTableView: UITableView!
     
+    // MARK: - Internal Properties
     var venues = [Venue]()
     
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +28,7 @@ class ListSearchViewController: UIViewController {
     
 }
 
+// MARK: - TableView Delegate Methods
 extension ListSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
@@ -41,7 +45,7 @@ extension ListSearchViewController: UITableViewDelegate {
     }
 }
 
-
+// MARK: - TableView Data Source Methods
 extension ListSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         venues.count

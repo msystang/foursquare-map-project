@@ -10,14 +10,17 @@ import UIKit
 
 class CollectionsViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var collectionsCollectionView: UICollectionView!
     
+    // MARK: - Internal Properties
     var collections = [Collection]() {
         didSet {
             collectionsCollectionView.reloadData()
         }
     }
     
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,16 +36,19 @@ class CollectionsViewController: UIViewController {
         }
     }
     
+    // MARK: - Private Methods
     private func setUpCollectionView() {
         collectionsCollectionView.dataSource = self
         collectionsCollectionView.delegate = self
     }
 }
 
+// MARK: - CollectionView Delegate Methods
 extension CollectionsViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// MARK: - CollectionView Data Source Methods
 extension CollectionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collections.count

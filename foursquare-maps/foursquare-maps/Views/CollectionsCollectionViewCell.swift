@@ -10,8 +10,8 @@ import UIKit
 
 class CollectionsCollectionViewCell: UICollectionViewCell {
  
+    // MARK: - IBOutlets
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var collectionNameLabel: UILabel!
-    
     
 }
