@@ -17,7 +17,7 @@ class VenueAPIClient {
     // MARK: - Instance Methods
     
     static func getSearchResultsURLStr(from latitude: Double, longitude: Double, searchString: String) -> String {
-        return "https://api.foursquare.com/v2/venues/search?client_id=\(Secrets.foursquareClientID)&client_secret=\(Secrets.foursquareSecret)&v=20180323&ll=\(latitude),\(longitude)&query=\(searchString)&limit=2"
+        return "https://api.foursquare.com/v2/venues/search?client_id=\(Secrets.foursquareClientID)&client_secret=\(Secrets.foursquareSecret)&v=20180323&ll=\(latitude),\(longitude)&query=\(searchString)&limit=2&radius=2000"
     }
     
     func getVenues(urlStr: String, completionHandler: @escaping (Result<[Venue], AppError>) -> ())  {

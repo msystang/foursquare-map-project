@@ -12,7 +12,6 @@ import CoreLocation
 
 class MapSearchViewController: UIViewController {
     // TODO: Figure out why image resizes in cell
-    // TODO: update search request based on which search bar was used, update location search bar
     
     // MARK: - IBOutlets
     @IBOutlet weak var venueSearchBar: UISearchBar!
@@ -215,7 +214,7 @@ extension MapSearchViewController: UISearchBarDelegate {
                     let newAnnotation = MKPointAnnotation()
                     newAnnotation.coordinate = CLLocationCoordinate2D(latitude: latitude ?? self.initialLocation.coordinate.latitude, longitude: longitude ?? self.initialLocation.coordinate.longitude)
                 
-                    let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
+                    let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius, longitudinalMeters: self.searchRadius)
                     self.mapView.setRegion(coordinateRegion, animated: true)
                     self.currentLocation = .init(latitude: latitude ?? self.initialLocation.coordinate.latitude, longitude: longitude ?? self.initialLocation.coordinate.longitude)
                     
@@ -270,13 +269,19 @@ extension MapSearchViewController: UICollectionViewDataSource {
                         }
                     }
                 }
-                
             }
         }
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let venue = venues[indexPath.row]
+        let newAnnotation = MKPointAnnotation()
+        newAnnotation.coordinate = CLLocationCoordinate2D(latitude: (venue.coordinate.latitude), longitude: (venue.coordinate.longitude))
+        let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius, longitudinalMeters: self.searchRadius)
+        self.mapView.setRegion(coordinateRegion, animated: true)
+    }
     
 }
 
