@@ -35,9 +35,16 @@ class MapSearchViewController: UIViewController {
     
     var searchString: String? = nil {
         didSet {
-            loadVenues()
+            loadVenues(from: currentLocation.latitude, longitude: currentLocation.longitude)
             addMapAnnotations(venues: venues)
             venueImageCollectionView.reloadData()
+        }
+    }
+    
+    var currentLocation = CLLocationCoordinate2D(latitude: 40.742054, longitude: -73.769417) {
+        didSet {
+            self.loadVenues(from: currentLocation.latitude, longitude: currentLocation.longitude)
+            self.venueImageCollectionView.reloadData()
         }
     }
     
@@ -87,8 +94,9 @@ class MapSearchViewController: UIViewController {
         }
     }
     
-    private func loadVenues() {
-        let urlStr = VenueAPIClient.getSearchResultsURLStr(from: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude, searchString: searchString ?? "")
+    
+    private func loadVenues(from latitude: Double, longitude: Double) {
+        let urlStr = VenueAPIClient.getSearchResultsURLStr(from: latitude, longitude: longitude, searchString: searchString ?? "")
         
         VenueAPIClient.manager.getVenues(urlStr: urlStr) { (result) in
             DispatchQueue.main.async {
@@ -102,6 +110,22 @@ class MapSearchViewController: UIViewController {
             }
         }
     }
+    
+//    private func loadVenues() {
+//        let urlStr = VenueAPIClient.getSearchResultsURLStr(from: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude, searchString: searchString ?? "")
+//
+//        VenueAPIClient.manager.getVenues(urlStr: urlStr) { (result) in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .failure(let error):
+//                    // TODO: Make alert?
+//                    print(error)
+//                case .success(let venuesFromUrl):
+//                    self.venues = venuesFromUrl
+//                }
+//            }
+//        }
+//    }
     
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
@@ -192,7 +216,7 @@ extension MapSearchViewController: UISearchBarDelegate {
                 //remove annotations
                 let annotations = self.mapView.annotations
                 self.mapView.removeAnnotations(annotations)
-                self.loadVenues()
+                self.loadVenues(from: self.currentLocation.latitude, longitude: self.currentLocation.longitude)
                 
             }
         }
