@@ -197,31 +197,55 @@ extension MapSearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = self.view.center
-        activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
         
-        searchBar.resignFirstResponder()
-        
-        let searchRequest = MKLocalSearch.Request()
-        searchRequest.naturalLanguageQuery = searchBar.text
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        activeSearch.start { (response, error) in
-            activityIndicator.stopAnimating()
+        switch searchBar.tag {
+        case 0:
+            // TODO: add alert?
+            guard searchBar.text != "" && searchBar.text != nil else { return }
+            searchString = searchBar.text
+        case 1:
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.center = self.view.center
+            activityIndicator.startAnimating()
+            self.view.addSubview(activityIndicator)
             
-            if response == nil {
-                print(error)
-            } else {
-                //remove annotations
-                let annotations = self.mapView.annotations
-                self.mapView.removeAnnotations(annotations)
-                self.loadVenues(from: self.currentLocation.latitude, longitude: self.currentLocation.longitude)
+            searchBar.resignFirstResponder()
+            
+            let searchRequest = MKLocalSearch.Request()
+            searchRequest.naturalLanguageQuery = searchBar.text
+            let activeSearch = MKLocalSearch(request: searchRequest)
+            activeSearch.start { (response, error) in
+                activityIndicator.stopAnimating()
                 
+                if response == nil {
+                    print(error)
+                } else {
+                    //remove annotations
+                    let annotations = self.mapView.annotations
+                    self.mapView.removeAnnotations(annotations)
+                    
+                    //add new annotations
+                    let latitude = response?.boundingRegion.center.latitude
+                    let longitude = response?.boundingRegion.center.longitude
+                    let newAnnotation = MKPointAnnotation()
+                    newAnnotation.coordinate = CLLocationCoordinate2D(latitude: latitude ?? self.initialLocation.coordinate.latitude, longitude: longitude ?? self.initialLocation.coordinate.longitude)
+                
+                    let coordinateRegion = MKCoordinateRegion.init(center: newAnnotation.coordinate, latitudinalMeters: self.searchRadius * 2.0, longitudinalMeters: self.searchRadius * 2.0)
+                    self.mapView.setRegion(coordinateRegion, animated: true)
+                    self.currentLocation = .init(latitude: latitude ?? self.initialLocation.coordinate.latitude, longitude: longitude ?? self.initialLocation.coordinate.longitude)
+                    
+                    
+                }
             }
+        default:
+            print("invalid tag")
+
         }
         
     }
+    
+    
+    
 }
 
 // MARK: - CollectionView Data Source Methods
