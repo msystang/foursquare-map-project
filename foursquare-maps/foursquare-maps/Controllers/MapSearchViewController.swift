@@ -244,7 +244,6 @@ extension MapSearchViewController: UICollectionViewDataSource {
         
         let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)
         
-        //TODO: Determine if need async for apiclients
         VenueImageAPIClient.manager.getVenueImages(urlStr: venueImageResultsUrlStr) { (result) in
             DispatchQueue.main.async {
                 switch result {

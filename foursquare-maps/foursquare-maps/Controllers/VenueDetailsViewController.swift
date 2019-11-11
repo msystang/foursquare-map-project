@@ -29,7 +29,7 @@ class VenueDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         nameLabel.text = venue.name
-        categoryLabel.text = venue.categories[0].name
+        categoryLabel.text = venue.categories?[0].name ?? "No category"
         
     }
     

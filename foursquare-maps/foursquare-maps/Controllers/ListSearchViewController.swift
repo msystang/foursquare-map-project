@@ -59,7 +59,7 @@ extension ListSearchViewController: UITableViewDataSource {
         
         cell.nameLabel.text = venue.name
         
-        cell.categoryLabel.text = venue.categories[0].name
+        cell.categoryLabel.text = venue.categories?[0].name ?? "No category"
         
         let venueImageResultsUrlStr = VenueImageAPIClient.getImageResultsURLStr(for: venue)
                print(venueImageResultsUrlStr)

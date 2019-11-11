@@ -31,11 +31,15 @@ class Venue: NSObject, Codable, MKAnnotation {
     let id: String
     let name: String
     // TODO: make location optional
-    let location: Location
-    let categories: [Category]
+    let location: Location?
+    let categories: [Category]?
     
     var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+        if let location = location {
+            return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+        } else {
+            return CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        }
     }
 }
 
