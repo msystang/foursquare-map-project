@@ -106,26 +106,11 @@ class MapSearchViewController: UIViewController {
                     print(error)
                 case .success(let venuesFromUrl):
                     self.venues = venuesFromUrl
+                    self.venueImageCollectionView.reloadData()
                 }
             }
         }
     }
-    
-//    private func loadVenues() {
-//        let urlStr = VenueAPIClient.getSearchResultsURLStr(from: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude, searchString: searchString ?? "")
-//
-//        VenueAPIClient.manager.getVenues(urlStr: urlStr) { (result) in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .failure(let error):
-//                    // TODO: Make alert?
-//                    print(error)
-//                case .success(let venuesFromUrl):
-//                    self.venues = venuesFromUrl
-//                }
-//            }
-//        }
-//    }
     
     private func addMapAnnotations(venues: [Venue]) {
         for venue in venues {
@@ -297,11 +282,6 @@ extension MapSearchViewController: UICollectionViewDataSource {
 
 // MARK: - CollectionView Delegate Methods
 extension MapSearchViewController: UICollectionViewDelegateFlowLayout {
-    
-//    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-//
-//        return CGSize(width: 200, height: 200)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let imgWidth = view.bounds.width/5.0
